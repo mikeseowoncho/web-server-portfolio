@@ -109,7 +109,7 @@ export default function FamicomRackPortfolio() {
                   FAMILY COMPUTER
                 </h1>
                 <p className="text-[10px] sm:text-xs font-black tracking-widest text-[#DCA836] mt-1 uppercase">
-                  PLAYER 1: SEOWON CHO
+                  PLAYER 1: READY
                 </p>
               </div>
 
@@ -154,7 +154,7 @@ export default function FamicomRackPortfolio() {
               </div>
 
               <div className="p-3.5 space-y-4">
-                {/* 1) OPERATOR SPEC ID CARD (얼굴 제외, 하드웨어 사양 룩) */}
+                {/* 1) OPERATOR SPEC ID CARD (개인 식별 정보 제외) */}
                 <div className="border-2 border-[#2D1B18] bg-[#F0ECE3] p-3 rounded space-y-2 border-b-2 border-[#2D1B18] pb-3 shadow-[2px_2px_0px_0px_#2D1B18]">
                   <div className="flex justify-between items-center border-b border-[#2D1B18]/20 pb-1">
                     <span className="text-[9px] font-black text-[#8D1426] tracking-wider">
@@ -170,15 +170,13 @@ export default function FamicomRackPortfolio() {
                         OPERATOR
                       </span>
                       <span className="text-[#8D1426] font-black text-sm">
-                        조서원 (Seowon Cho)
+                        ANONYMOUS
                       </span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-zinc-500 text-[10px]">
-                        AFFILIATION
-                      </span>
+                      <span className="text-zinc-500 text-[10px]">ROLE</span>
                       <span className="text-zinc-800 text-[11px]">
-                        정보보안학과 2학년
+                        SECURITY / DEV
                       </span>
                     </div>
                     <div className="flex justify-between items-center">
@@ -189,7 +187,6 @@ export default function FamicomRackPortfolio() {
                     </div>
                   </div>
                 </div>
-
                 {/* 2) Tech / Security 4개 반도체 칩셋 */}
                 <div className="space-y-2 border-b-2 border-dashed border-[#2D1B18]/30 pb-3">
                   <div className="text-center text-xs font-black text-[#8D1426]">
