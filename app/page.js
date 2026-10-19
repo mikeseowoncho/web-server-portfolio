@@ -146,7 +146,7 @@ export default function FamicomRackPortfolio() {
 
         {/* 3. 메인 그리드 (좌측 5 / 우측 7 비율) */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-start">
-          {/* 좌측 패널: OPERATOR SPEC (사람 얼굴 대신 SPEC ID 박스 적용) */}
+          {/* 좌측 패널: OPERATOR SPEC */}
           <aside className="md:col-span-5 space-y-4">
             <div className="border-4 border-[#2D1B18] bg-[#FAF7EE] rounded-lg shadow-[4px_4px_0px_0px_#2D1B18] overflow-hidden">
               <div className="bg-[#8D1426] text-white font-black text-center py-1.5 border-b-4 border-[#2D1B18] text-sm tracking-wider uppercase">
@@ -154,7 +154,7 @@ export default function FamicomRackPortfolio() {
               </div>
 
               <div className="p-3.5 space-y-4">
-                {/* 1) OPERATOR SPEC ID CARD (개인 식별 정보 제외) */}
+                {/* 1) OPERATOR SPEC ID CARD */}
                 <div className="border-2 border-[#2D1B18] bg-[#F0ECE3] p-3 rounded space-y-2 border-b-2 border-[#2D1B18] pb-3 shadow-[2px_2px_0px_0px_#2D1B18]">
                   <div className="flex justify-between items-center border-b border-[#2D1B18]/20 pb-1">
                     <span className="text-[9px] font-black text-[#8D1426] tracking-wider">
@@ -187,6 +187,7 @@ export default function FamicomRackPortfolio() {
                     </div>
                   </div>
                 </div>
+
                 {/* 2) Tech / Security 4개 반도체 칩셋 */}
                 <div className="space-y-2 border-b-2 border-dashed border-[#2D1B18]/30 pb-3">
                   <div className="text-center text-xs font-black text-[#8D1426]">
@@ -200,7 +201,7 @@ export default function FamicomRackPortfolio() {
                   </div>
                 </div>
 
-                {/* 3) Retro Console Status (도트 스프라이트 2개) */}
+                {/* 3) Retro Console Status */}
                 <div className="space-y-2 text-xs font-bold">
                   <div className="text-center font-black text-[#8D1426]">
                     Retro Console Status
@@ -234,9 +235,8 @@ export default function FamicomRackPortfolio() {
             </div>
           </aside>
 
-          {/* 우측 패널: CARTRIDGE RACK (2열 팩 진열장) */}
+          {/* 우측 패널: CARTRIDGE RACK */}
           <main className="md:col-span-7 space-y-3">
-            {/* 상단 랙 탭 & 신규 등록 버튼 */}
             <div className="flex justify-between items-center gap-2">
               <div className="bg-[#8D1426] text-white font-black px-4 py-1 border-4 border-[#2D1B18] rounded-t-lg text-xs tracking-wider shadow-[3px_3px_0px_0px_#2D1B18] uppercase">
                 CARTRIDGE RACK
@@ -250,7 +250,6 @@ export default function FamicomRackPortfolio() {
               </button>
             </div>
 
-            {/* 랙 본체 */}
             <div className="border-4 border-[#2D1B18] bg-[#5E121E] p-3 sm:p-4 rounded-xl shadow-[5px_5px_0px_0px_#2D1B18]">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 {projects.map((proj, idx) => {
@@ -279,15 +278,23 @@ export default function FamicomRackPortfolio() {
                         </button>
                       </div>
 
-                      {/* 팩 중앙 화이트 스티커 라벨 */}
-                      <div className="border-2 border-[#2D1B18] bg-[#FAF7EE] p-2 rounded shadow-inner mb-2.5 text-center">
-                        <div className="font-black text-[9px] text-[#8D1426] border-b border-[#2D1B18]/20 pb-0.5 mb-1 tracking-wider uppercase">
-                          {proj.week || "STAGE LAB"}
+                      {/* 팩 중앙 화이트 스티커 라벨 (설명 필드 추가됨) */}
+                      <div className="border-2 border-[#2D1B18] bg-[#FAF7EE] p-2 rounded shadow-inner mb-2.5 text-center flex flex-col justify-between">
+                        <div>
+                          <div className="font-black text-[9px] text-[#8D1426] border-b border-[#2D1B18]/20 pb-0.5 mb-1 tracking-wider uppercase">
+                            {proj.week || "STAGE LAB"}
+                          </div>
+                          <div className="font-black text-xs text-[#2D1B18] leading-tight line-clamp-2 min-h-[24px] flex items-center justify-center">
+                            {proj.title}
+                          </div>
+                          {proj.description && (
+                            <p className="text-[10px] text-zinc-600 font-medium mt-1 line-clamp-2 leading-tight border-t border-dashed border-[#2D1B18]/20 pt-1">
+                              {proj.description}
+                            </p>
+                          )}
                         </div>
-                        <div className="font-black text-xs text-[#2D1B18] leading-tight line-clamp-2 min-h-[30px] flex items-center justify-center">
-                          {proj.title}
-                        </div>
-                        <div className="flex justify-between items-center text-[7px] text-zinc-500 font-bold mt-1 pt-0.5 border-t border-[#2D1B18]/10">
+
+                        <div className="flex justify-between items-center text-[7px] text-zinc-500 font-bold mt-1.5 pt-0.5 border-t border-[#2D1B18]/10">
                           <span>SEAL</span>
                           <span>
                             {proj.category === "current" ? "SEC-LAB" : "RETRO"}
